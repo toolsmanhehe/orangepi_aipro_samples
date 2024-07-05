@@ -8,23 +8,32 @@
 基于Orangepi_Ai_Pro (8-12T)或Orangepi_Ai_Pro (20T)
 
 ### 软件
+
+1. CANN
 当前代码基于CANN=8.0.RC2.alpha003桌面环境测试，下载方式如下：
 
-访问[昇腾社区下载页面](https://www.hiascend.com/developer/download)，选择社区版，点击下方的查找配套资源。==请不要添加硬件信息，之间点击查找即可，不然会找不到8.0的CANN包==
+    访问[昇腾社区下载页面](https://www.hiascend.com/developer/download)，选择社区版，点击下方的查找配套资源。==请不要添加硬件信息，之间点击查找即可，不然会找不到8.0的CANN包==
 
-![download_cann](./doc/images/dowmload_cann.png)
+    ![download_cann](./doc/images/dowmload_cann.png)
 
-选择CPU架构为AArch64，CANN软件包格式为run。软件包有点多，不要下错了，下载Ascend-cann-toolkit_xxx_linux-aarch64.run，其中xxx为版本号。
+    选择CPU架构为AArch64，CANN软件包格式为run。软件包有点多，不要下错了，下载Ascend-cann-toolkit_xxx_linux-aarch64.run，其中xxx为版本号。
 
-![download_cann1](./doc/images/dowmload_cann1.png)
+    ![download_cann1](./doc/images/dowmload_cann1.png)
 
-下载完成后上传到开发板，执行
+    下载完成后上传到开发板，执行
 
-`chmod +x ./Ascend-cann-toolkit_xxx_linux-aarch64.run  #xxx替换为实际版本号`
+    `chmod +x ./Ascend-cann-toolkit_xxx_linux-aarch64.run  #xxx替换为实际版本号`
 
-`sudo ./Ascend-cann-toolkit_xxx_linux-aarch64.run --install  ##xxx替换为实际版本号`
+    `sudo ./Ascend-cann-toolkit_xxx_linux-aarch64.run --install  ##xxx替换为实际版本号`
 
-如果之前开发板上安装有CANN软件包，请先执行`sudo ./Ascend-cann-toolkit_xxx_linux-aarch64.run --uninstall`，否则可能会安装失败。
+    如果之前开发板上安装有CANN软件包，请先执行`sudo ./Ascend-cann-toolkit_xxx_linux-aarch64.run --uninstall`，否则可能会安装失败。
+
+2.  yuview(一款跨平台的YUV播放器)
+
+    源项目地址：[https://github.com/IENT/YUView](https://github.com/IENT/YUView)
+    ```
+    sudo apt install yuview
+    ```
 
 #### 使用说明
 

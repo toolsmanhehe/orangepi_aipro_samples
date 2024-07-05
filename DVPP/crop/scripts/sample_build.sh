@@ -1,8 +1,8 @@
 #!/bin/bash
 ScriptPath="$( cd "$(dirname "$BASH_SOURCE")" ; pwd -P )"
 DataPath="${ScriptPath}/../data"
-common_script_dir=${THIRDPART_PATH}/common
-. ${common_script_dir}/sample_common.sh
+#common_script_dir=${THIRDPART_PATH}/common
+#. ${common_script_dir}/sample_common.sh
 
 function main()
 {
