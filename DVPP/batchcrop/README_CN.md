@@ -40,20 +40,21 @@
 ## 准备测试图片<a name="section137281211132"></a>
 
 
-检查[data](./data)目录下是否存在测试图片，如果不存在请在开发板上以‘HwHiAiUser’用户执行以下命令获取该样例的输入图片。
+检查[data](./data)目录下是否存在测试图片，如果不存在请在开发板上以`HwHiAiUser`用户执行以下命令获取该样例的输入图片。
 
+    ```
     cd ./data
-    wget [https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/models/aclsample/dvpp\_vpc\_1920x1080\_nv12.yuv](https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/models/aclsample/dvpp_vpc_1920x1080_nv12.yuv)
-
+    wget https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/models/aclsample/dvpp_vpc_1920x1080_nv12.yuv
+    ```
 
 ## 编译运行<a name="section19471849121012"></a>
 
 1.  编译代码。
-    1.  以'HwHiAiUser'登录开发环境。
+    1.  以`HwHiAiUser`登录开发环境。
 
     2. 设置环境变量，配置程序编译依赖的头文件与库文件路径。如果使用的是香橙派提供的镜像，可以跳过这一步。
   
-       设置以下环境变量后，编译脚本会根据"$ENV{DDK_PATH}/runtime/include/acl”目录查找编译依赖的头文件，根据{NPU_HOST_LIB}环境变量指向的目录查找编译依赖的库文件。
+       设置以下环境变量后，编译脚本会根据"$ENV{DDK_PATH}/runtime/include/acl”目录查找编译依赖的头文件，根据{NPU_HOST_LIB}环境变量指向的目录查找编译依赖的库文件。如果CANN路径不是`/usr/local/Ascend/ascend-toolkit`，情修改为自己环境的路径。
   
         ```
         vim ~/.bashrc   #添加以下环境变量
@@ -82,7 +83,7 @@
         cmake ../../../src -DCMAKE_CXX_COMPILER=g++ -DCMAKE_SKIP_RPATH=TRUE
         ```
 
-    5.  执行**make**命令，生成的可执行文件main在“DVPP/batchcrop/out“目录下。
+    5.  执行**make**命令，生成的可执行文件main在本案例“/out“目录下。
 
         ```
         make
