@@ -47,11 +47,13 @@ endif()
 include_directories(
     ${INC_PATH}/runtime/include/
     ../inc/
+    $ENV{ASCEND_TOOLKIT_HOME}/acllib/include/
 )
 
 # add host lib path
 link_directories(
     ${LIB_PATH}
+    $ENV{ASCEND_TOOLKIT_HOME}/acllib/lib/
 )
 
 add_executable(main
