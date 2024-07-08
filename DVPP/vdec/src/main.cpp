@@ -19,7 +19,7 @@
 #include "acl/ops/acl_dvpp.h"
 #include "main.h"
 
-std::string filePath =  "../data/vdec_h265_1frame_rabbit_1280x720.h265";
+std::string filePath =  "../data/out.h265";
 const int INPUT_WIDTH = 1280;
 const int INPUT_HEIGHT = 720;
 

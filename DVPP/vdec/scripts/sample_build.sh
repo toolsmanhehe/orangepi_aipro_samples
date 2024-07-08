@@ -1,14 +1,14 @@
 #!/bin/bash
 ScriptPath="$( cd "$(dirname "$BASH_SOURCE")" ; pwd -P )"
 DataPath="${ScriptPath}/../data"
-common_script_dir=${THIRDPART_PATH}/common
-. ${common_script_dir}/sample_common.sh
+# common_script_dir=${THIRDPART_PATH}/common
+# . ${common_script_dir}/sample_common.sh
 
 function main()
 {
   echo "[INFO] Sample preparation"
 
-  target_kernel
+  # target_kernel
   if [ $? -ne 0 ];then
     return 1
   fi
@@ -17,7 +17,7 @@ function main()
     wget -O ${DataPath}/vdec_h265_1frame_rabbit_1280x720.h265 https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/models/vdec/vdec_h265_1frame_rabbit_1280x720.h265 --no-check-certificate
   fi
 
-  build
+  # build
   if [ $? -ne 0 ];then
     return 1
   fi
