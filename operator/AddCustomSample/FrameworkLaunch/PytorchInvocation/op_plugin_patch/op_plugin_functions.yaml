@@ -1,2 +1,0 @@
-  - func: npu_add_custom(Tensor x, Tensor y) -> Tensor
-    impl_ns: op_api

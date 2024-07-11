@@ -1,28 +1,55 @@
 #!/bin/bash
 ScriptPath="$( cd "$(dirname "$BASH_SOURCE")" ; pwd -P )"
-DataPath="${ScriptPath}/../data"
-# common_script_dir=${THIRDPART_PATH}/common
-# . ${common_script_dir}/sample_common.sh
+
+function data_prepare()
+{
+  cd ${ScriptPath}/../
+  if [ ! -f "./data/vdec_h265_1frame_rabbit_1280x720.h265" ];then
+    echo "[INFO] Start data prepare"
+    wget -O ./data/vdec_h265_1frame_rabbit_1280x720.h265 https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/models/vdec/vdec_h265_1frame_rabbit_1280x720.h265 --no-check-certificate
+  fi
+}
+
+function build()
+{
+  if [ -d ${ScriptPath}/../out ];then
+    rm -rf ${ScriptPath}/../out
+  fi
+
+  if [ -d ${ScriptPath}/../build ];then
+    rm -rf ${ScriptPath}/../build
+  fi
+
+  mkdir -p ${ScriptPath}/../build
+  cd ${ScriptPath}/../build
+
+  cmake ../src -DCMAKE_CXX_COMPILER=g++ -DCMAKE_SKIP_RPATH=TRUE
+  if [ $? -ne 0 ];then
+    echo "[ERROR] cmake error, Please check your environment!"
+    return 1
+  fi
+  make
+  if [ $? -ne 0 ];then
+    echo "[ERROR] build failed, Please check your environment!"
+    return 1
+  fi
+  cd - > /dev/null
+}
 
 function main()
 {
+  data_prepare
+  if [ $? -ne 0 ];then
+    echo "[INFO] Data prepared failed!"
+    return 1
+  fi
+  echo "[INFO] Data is complete"
+
   echo "[INFO] Sample preparation"
-
-  # target_kernel
+  build
   if [ $? -ne 0 ];then
     return 1
   fi
-
-  if [ ! -f "${DataPath}/vdec_h265_1frame_rabbit_1280x720.h265" ];then
-    wget -O ${DataPath}/vdec_h265_1frame_rabbit_1280x720.h265 https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/models/vdec/vdec_h265_1frame_rabbit_1280x720.h265 --no-check-certificate
-  fi
-
-  # build
-  if [ $? -ne 0 ];then
-    return 1
-  fi
-    
   echo "[INFO] Sample preparation is complete"
 }
 main
-

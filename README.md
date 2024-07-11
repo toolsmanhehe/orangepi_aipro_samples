@@ -28,19 +28,6 @@
 
     如果之前开发板上安装有CANN软件包，请先执行`sudo ./Ascend-cann-toolkit_xxx_linux-aarch64.run --uninstall`，否则可能会安装失败。
 
-2.  yuview(一款跨平台的YUV播放器)
-
-    源项目地址：[https://github.com/IENT/YUView](https://github.com/IENT/YUView)
-    ```
-    sudo apt install yuview
-    ```
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
 #### 参与贡献
 
 1.  Fork 本仓库

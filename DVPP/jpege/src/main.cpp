@@ -264,8 +264,8 @@ int main(int argc, char *argv[])
     INFO_LOG("Call JpegE");
 
     DIR *dir;
-    if ((dir = opendir("./out")) == NULL) {
-        system("mkdir ./out");
+    if ((dir = opendir("../out")) == NULL) {
+        system("mkdir ../out");
     }
         
     // create dvpp channel
