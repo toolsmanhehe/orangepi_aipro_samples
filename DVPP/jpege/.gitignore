@@ -1,2 +1,4 @@
 out/*
 build/*
+data/*
+!data/dvpp_output.yuv

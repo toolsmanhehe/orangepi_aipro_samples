@@ -1,2 +1,4 @@
 out/*
 build/*
+data/*
+!data/vdec_h265_1frame_rabbit_1280x720.h265

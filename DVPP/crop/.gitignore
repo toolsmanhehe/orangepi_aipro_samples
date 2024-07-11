@@ -1,2 +1,4 @@
 out/*
 build/*
+data/*
+!data/wood_rabbit_1024_1068_nv12.yuv

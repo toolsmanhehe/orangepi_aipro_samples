@@ -1,2 +1,4 @@
 out/*
 build/*
+data/*
+!data/dvpp_vpc_1920x1080_nv12.yuv
