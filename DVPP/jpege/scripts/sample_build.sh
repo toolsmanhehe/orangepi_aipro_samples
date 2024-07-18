@@ -4,9 +4,9 @@ ScriptPath="$( cd "$(dirname "$BASH_SOURCE")" ; pwd -P )"
 function data_prepare()
 {
   cd ${ScriptPath}/../
-  if [ ! -f "./data/dvpp_output.yuv" ];then
+  if [ ! -f "./data/dvpp_input.yuv" ];then
     echo "[INFO] Start data prepare"
-    wget -O ./data/dvpp_output.yuv https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/models/jpege/dvpp_output.yuv --no-check-certificate
+    wget -O ./data/dvpp_input.yuv https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/models/aclsample/dvpp_vpc_1920x1080_nv12.yuv --no-check-certificate
   fi
 }
 
